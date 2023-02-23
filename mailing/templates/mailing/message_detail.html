@@ -1,0 +1,11 @@
+{% include "base.html" %}
+<div class="container text-center">
+    <div class="card w-50">
+        <div class="card-body">
+            <h3 class="card-title">Тема письма: {{ message.title }}</h3>
+            <a href="{% url 'mailing:message_update' message.pk %}" class="btn btn-primary">Изменить</a>
+            <a href="{% url 'mailing:message_delete' message.pk %}" class="btn btn-primary">Удалить</a>
+            <a href="{% url 'mailing:message_list' %}" class="btn btn-primary">Вернуться назад</a>
+        </div>
+    </div>
+</div>>

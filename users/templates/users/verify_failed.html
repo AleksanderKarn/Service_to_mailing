@@ -1,0 +1,13 @@
+{% extends 'users/base.html' %}
+{% block content %}
+    <p>
+        Что то пошло не так :(
+    </p>
+    <a href="{% url 'home:home' %}" class="btn btn-link">
+        На главную
+    </a>
+    <a href="{% url 'users:register' %}" class="btn btn-link">
+        Попробовать еще раз
+    </a>
+    <a href="mailto:support@market.com">Напишите в поддержку</a>
+{% endblock %}

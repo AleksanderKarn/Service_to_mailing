@@ -1,0 +1,11 @@
+{% include "home.html" %}
+<body>
+<div class="container text-center">
+    <form method="post">
+        {% csrf_token %}
+        <H3>Уверены что хотите удалить подписчика {{ subscriber.full_name }}?</H3>
+        <button class="btn btn-primary" type="submit">Удалить</button>
+        <a href="{% url 'subscriber:subscriber_list' %}" class="btn btn-primary">Отмена</a>
+    </form>
+</div>
+</body>

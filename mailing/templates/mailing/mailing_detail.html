@@ -1,0 +1,16 @@
+{% include "base.html" %}
+<div class="container text-center">
+    <div class="card w-50">
+        <div class="card-body">
+            <h3 class="card-title">Время отправки: {{ mailing.time_mailing_start }}</h3>
+            <h3 class="card-title">Время отправки: {{ mailing.time_mailing_end }}</h3>
+            <h4 class="card-text">Периодичность: {{ mailing.period_mailing }}</h4>
+            <h5 class="card-title">Статус: {{ mailing.status }}</h5>
+            {% if not perms.mailing.off_mailing or  perms.is_superuser %}
+                <a href="{% url 'mailing:mailing_update' mailing.pk %}" class="btn btn-primary">Изменить</a>
+                <a href="{% url 'mailing:mailing_delete' mailing.pk %}" class="btn btn-primary">Удалить</a>
+                <a href="{% url 'mailing:mailing_list' %}" class="btn btn-primary">Назад</a>
+            {% endif %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+{% load static %}
+{% include "base.html" %}
+<h2><a href="{% url 'blog:post_list' %}">Все статьи</a></h2>
+<p></p>
+{% if perms.is_superuser %}
+    <h4><a href="{% url 'blog:post_create' %}">Создать пост</a></h4>
+{% endif %}
+
+<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all"/>
+
+<body>
+<div id="main">
+    <div id="content" class="left">
+
+        <div class="projects">
+            <h2>{{ post.title }}</h2>
+            <p>{% if post.count_views != None %}
+                <p>Просмотров - {{ post.count_views }} </p>
+            {% else %}
+                <h5>0 Просмотров</h5>
+            {% endif %}
+            </p>
+            <img src="{{ post.image.url }}" class="card-img-top" alt="...">
+            <p></p>
+            <div class="item">
+                <div class="text left">
+                    <h3>{{ post.body }}</h3>
+                    <div>
+                        <p>Создано {{ post.created_at }}</p>
+                        {% if perms.is_superuser %}
+                            <a class="me-3 py-2 text-dark text-decoration-none btn btn-outline-warning"
+                               href="{% url 'blog:post_update' post.pk %}">Обновить</a>
+                            <a class="me-3 py-2 text-dark text-decoration-none btn btn-outline-danger"
+                               href="{% url 'blog:post_delete' post.pk %}">Удалить</a>
+                            <p></p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+

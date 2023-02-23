@@ -1,0 +1,11 @@
+{% include "base.html" %}
+<h3 class="container text-center">Создание новой рассылки</h3>
+<body>
+<div class="container text-center">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-primary" type="submit">Сохранить</button>
+    </form>
+</div>
+</body>

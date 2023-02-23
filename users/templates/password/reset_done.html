@@ -1,0 +1,11 @@
+{% extends 'users/base.html' %}
+{% block content %}
+    <p>_____________________________________</p>
+    <h1>
+        На указанную вами почту было выслано письмо со ссылкой для восстановления пароля
+    </h1>
+    <p>_____________________________________</p>
+    <a class="me-3 py-2 text-dark text-decoration-none btn btn-outline-primary"
+       href="{% url 'home:home' %}">На главную
+    </a>
+{% endblock %}

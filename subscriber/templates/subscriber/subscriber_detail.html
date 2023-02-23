@@ -1,0 +1,13 @@
+{% include "home.html" %}
+<div class="container text-center">
+    <div class="card w-50">
+        <div class="card-body">
+            <h3 class="card-title">Имя: {{ subscriber.full_name }}</h3>
+            <h4 class="card-text">Email адрес: {{ subscriber.email }}</h4>
+            <h5 class="card-title"> {{ subscriber.comment }}</h5>
+            <a href="{% url 'subscriber:subscriber_update' subscriber.pk %}" class="btn btn-primary">Изменить</a>
+            <a href="{% url 'subscriber:subscriber_delete' subscriber.pk %}" class="btn btn-primary">Удалить</a>
+            <a href="{% url 'subscriber:subscriber_list' %}" class="btn btn-primary">Назад</a>
+        </div>
+    </div>
+</div>

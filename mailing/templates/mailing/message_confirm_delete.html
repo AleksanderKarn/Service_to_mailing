@@ -1,0 +1,13 @@
+{% include "base.html" %}
+<body>
+<div class="container text-center">
+    <form method="post">
+        {% csrf_token %}
+        <p></p>
+        <H3>Уверены что хотите удалить письмо с названием {{ message.title }}?</H3>
+        <button class="btn btn-primary" type="submit">Удалить</button>
+        <a href="{% url 'mailing:message_list' %}" class="btn btn-primary">Отмена</a>
+    </form>
+</div>
+</body>
+

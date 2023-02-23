@@ -1,0 +1,11 @@
+{% extends 'users/base.html' %}
+{% block content %}
+    <p>______________________________</p>
+    <h1>
+        Пароль был успешно обновлен!
+    </h1>
+    <p>_______________________________</p>
+    <a class="me-3 py-2 text-dark text-decoration-none btn btn-outline-primary"
+       href="{% url 'users:login' %}">Войти в аккаунт
+    </a>
+{% endblock %}

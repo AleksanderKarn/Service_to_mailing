@@ -1,0 +1,14 @@
+{% include "base.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <button class="me-3 py-2 text-dark text-decoration-none btn btn-danger" type="submit">Удалить</button>
+    <a class="me-3 py-2 text-dark text-decoration-none btn btn-warning" href="{% url 'blog:post_detail' post.pk %}">Отмена</a>
+</form>
+</body>
+</html>
