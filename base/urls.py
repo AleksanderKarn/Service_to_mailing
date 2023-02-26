@@ -6,5 +6,5 @@ from base.views import HomePageView
 app_name = BaseConfig.name
 
 urlpatterns = [
-    path('', HomePageView.as_view(), name='home'),
+    path('',  HomePageView.as_view(), name='home'),
 ]

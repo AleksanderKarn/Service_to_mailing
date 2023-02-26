@@ -1,4 +1,8 @@
 {% include "base.html" %}
+{% if perms.is_superuser %}
+    <h4><a href="{% url 'blog:post_create' %}">Создать пост</a></h4>
+{% endif %}
+<p></p>
 {% for post in post_list %}
     <div class="card-group">
     <div class="card">
@@ -8,7 +12,7 @@
         {% else %}
             <h5>0 просмотров</h5>
         {% endif %}
-        </p>
+        <p></p>
         <img src="/media/{{ post.image }}" class="card-img-top" alt="...">
         <div class="card-body">
             <p class="card-text">{{ post.body }}</p>
