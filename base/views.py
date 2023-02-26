@@ -5,7 +5,7 @@ from django.views.generic import TemplateView
 from blog.models import Post
 from mailing.models import Mailing
 from subscriber.models import Subscriber
-from users.models import User
+
 
 
 class HomePageView(TemplateView):
